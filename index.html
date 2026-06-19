@@ -1,24 +1,244 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Rawnka Trading Company</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAWNKA TRADING COMPANY</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f8f5ee;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+      url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      min-height: 90vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .logo {
+      font-size: 48px;
+      font-weight: bold;
+      color: #f7c948;
+      margin-bottom: 15px;
+    }
+
+    header h1 {
+      font-size: 52px;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #f7c948;
+      color: #111;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 8px;
+    }
+
+    section {
+      padding: 70px 10%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 35px;
+      color: #2f4f1f;
+    }
+
+    .about {
+      text-align: center;
+      font-size: 19px;
+      line-height: 1.7;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h3 {
+      color: #3d6b25;
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+
+    .card p {
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .contact {
+      background: #2f4f1f;
+      color: white;
+      text-align: center;
+    }
+
+    .contact p {
+      font-size: 19px;
+      margin: 12px 0;
+    }
+
+    footer {
+      background: #17230f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media(max-width: 768px) {
+      header h1 {
+        font-size: 36px;
+      }
+
+      header p {
+        font-size: 18px;
+      }
+
+      .logo {
+        font-size: 36px;
+      }
+    }
+  </style>
 </head>
 
-<body style="font-family:Arial; text-align:center; background:#f5f5f5;">
+<body>
 
-<h1>🌾 Rawnka Trading Company</h1>
+  <header>
+    <div class="logo">🌾 RTC</div>
+    <h1>RAWNKA TRADING COMPANY</h1>
+    <p>Trusted Agricultural Commodity Trading Firm</p>
+    <a href="#products" class="btn">Our Products</a>
+    <a href="#contact" class="btn">Contact Us</a>
+  </header>
 
-<h2>Welcome!</h2>
+  <section>
+    <h2 class="section-title">About Us</h2>
+    <p class="about">
+      RAWNKA TRADING COMPANY is a trusted family-owned trading firm dealing in
+      agricultural commodities. We focus on quality products, fair pricing,
+      reliable service and long-term customer relationships.
+    </p>
+  </section>
 
-<p>We deal in Wheat, Rice, Maize, Pulses and all agricultural commodities.</p>
+  <section id="products">
+    <h2 class="section-title">Our Products</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>🌾 Wheat</h3>
+        <p>Quality wheat trading for wholesale and bulk supply.</p>
+      </div>
+      <div class="card">
+        <h3>🍚 Rice</h3>
+        <p>Reliable rice sourcing and trading for customers.</p>
+      </div>
+      <div class="card">
+        <h3>🌽 Maize</h3>
+        <p>Fresh and quality maize for agricultural markets.</p>
+      </div>
+      <div class="card">
+        <h3>🫘 Pulses</h3>
+        <p>Different varieties of pulses with trusted service.</p>
+      </div>
+    </div>
+  </section>
 
-<p><b>Quality Products | Fair Prices | Trusted Service</b></p>
+  <section>
+    <h2 class="section-title">Why Choose Us?</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Fair Prices</h3>
+        <p>We believe in transparent and competitive pricing.</p>
+      </div>
+      <div class="card">
+        <h3>Trusted Service</h3>
+        <p>Customer trust and satisfaction are our top priorities.</p>
+      </div>
+      <div class="card">
+        <h3>Quality Products</h3>
+        <p>We deal with carefully selected agricultural commodities.</p>
+      </div>
+    </div>
+  </section>
 
-<h3>Contact Us</h3>
+  <section>
+    <h2 class="section-title">Gallery</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=800&q=80">
+      <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80">
+      <img src="https://images.unsplash.com/photo-1530507629858-e4977d30e9e0?auto=format&fit=crop&w=800&q=80">
+    </div>
+  </section>
 
-<p>📞 +91 XXXXX XXXXX</p>
+  <section id="contact" class="contact">
+    <h2 class="section-title" style="color:white;">Contact Us</h2>
+    <p>📞 Phone: +91 XXXXX XXXXX</p>
+    <p>💬 WhatsApp: +91 XXXXX XXXXX</p>
+    <p>📍 Location: Your Town, Karnataka</p>
+    <p>✉️ Email: yourmail@example.com</p>
+    <br>
+    <a href="https://wa.me/91XXXXXXXXXX" class="btn">Message on WhatsApp</a>
+  </section>
 
-<p>📍 Your Town, Karnataka</p>
+  <footer>
+    <p>© 2026 RAWNKA TRADING COMPANY. All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
