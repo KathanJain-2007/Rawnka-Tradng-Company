@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RAWNKA TRADING COMPANY</title>
+  <title>RAWNKA TRADING COMPANY | Dudu Anaj Mandi</title>
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
       font-family: Arial, sans-serif;
     }
 
@@ -18,80 +19,138 @@
       color: #222;
     }
 
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      background: rgba(20, 45, 20, 0.92);
+      color: white;
+      padding: 16px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(8px);
+    }
+
+    nav h2 {
+      color: #f7c948;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
     header {
-      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-      url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80");
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.58), rgba(0,0,0,0.58)),
+        url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1800&q=80");
       background-size: cover;
       background-position: center;
-      min-height: 90vh;
       color: white;
       display: flex;
-      flex-direction: column;
+      align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 30px;
+      padding: 90px 20px 40px;
     }
 
-    .logo {
-      font-size: 48px;
-      font-weight: bold;
-      color: #f7c948;
-      margin-bottom: 15px;
-    }
-
-    header h1 {
-      font-size: 52px;
-      margin-bottom: 15px;
+    .hero h1 {
+      font-size: 56px;
+      margin-bottom: 18px;
       letter-spacing: 2px;
     }
 
-    header p {
-      font-size: 22px;
-      margin-bottom: 25px;
+    .hero h3 {
+      color: #f7c948;
+      font-size: 26px;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 760px;
+      margin: auto;
+      line-height: 1.7;
     }
 
     .btn {
       display: inline-block;
+      margin: 25px 8px 0;
+      padding: 14px 28px;
       background: #f7c948;
       color: #111;
-      padding: 14px 28px;
-      border-radius: 30px;
       text-decoration: none;
+      border-radius: 30px;
       font-weight: bold;
-      margin: 8px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      background: #ffd95a;
     }
 
     section {
-      padding: 70px 10%;
+      padding: 80px 9%;
     }
 
-    .section-title {
+    .title {
       text-align: center;
-      font-size: 36px;
-      margin-bottom: 35px;
+      font-size: 38px;
       color: #2f4f1f;
+      margin-bottom: 40px;
     }
 
-    .about {
+    .about-box {
+      background: white;
+      border-radius: 22px;
+      padding: 38px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      max-width: 1000px;
+      margin: auto;
       text-align: center;
       font-size: 19px;
-      line-height: 1.7;
-      max-width: 900px;
-      margin: auto;
+      line-height: 1.8;
     }
 
-    .cards {
+    .stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 22px;
+      margin-top: 35px;
+    }
+
+    .stat {
+      background: #2f4f1f;
+      color: white;
+      border-radius: 18px;
+      padding: 28px;
+      text-align: center;
+    }
+
+    .stat h2 {
+      color: #f7c948;
+      font-size: 34px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 24px;
     }
 
     .card {
       background: white;
       padding: 30px;
-      border-radius: 18px;
+      border-radius: 20px;
       text-align: center;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
       transition: 0.3s;
     }
 
@@ -101,27 +160,31 @@
 
     .card h3 {
       color: #3d6b25;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       font-size: 24px;
     }
 
     .card p {
       color: #555;
-      line-height: 1.5;
+      line-height: 1.6;
+    }
+
+    .services {
+      background: #eef3e8;
     }
 
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+      gap: 22px;
     }
 
     .gallery img {
       width: 100%;
-      height: 230px;
+      height: 240px;
       object-fit: cover;
       border-radius: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
     }
 
     .contact {
@@ -130,29 +193,82 @@
       text-align: center;
     }
 
+    .contact .title {
+      color: white;
+    }
+
+    .contact-box {
+      max-width: 850px;
+      margin: auto;
+      background: rgba(255,255,255,0.1);
+      padding: 35px;
+      border-radius: 22px;
+    }
+
     .contact p {
-      font-size: 19px;
-      margin: 12px 0;
+      font-size: 20px;
+      margin: 14px 0;
+    }
+
+    .map {
+      margin-top: 30px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    }
+
+    iframe {
+      width: 100%;
+      height: 320px;
+      border: 0;
     }
 
     footer {
       background: #17230f;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 24px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: #25D366;
+      color: white;
+      padding: 15px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+      z-index: 999;
     }
 
     @media(max-width: 768px) {
-      header h1 {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav a {
+        margin: 6px;
+        font-size: 14px;
+      }
+
+      .hero h1 {
         font-size: 36px;
       }
 
-      header p {
-        font-size: 18px;
+      .hero h3 {
+        font-size: 21px;
       }
 
-      .logo {
-        font-size: 36px;
+      .hero p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 65px 6%;
       }
     }
   </style>
@@ -160,85 +276,133 @@
 
 <body>
 
+  <nav>
+    <h2>🌾 RTC</h2>
+    <div>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
   <header>
-    <div class="logo">🌾 RTC</div>
-    <h1>RAWNKA TRADING COMPANY</h1>
-    <p>Trusted Agricultural Commodity Trading Firm</p>
-    <a href="#products" class="btn">Our Products</a>
-    <a href="#contact" class="btn">Contact Us</a>
+    <div class="hero">
+      <h1>RAWNKA TRADING COMPANY</h1>
+      <h3>Trusted Agricultural Commodity Trading Firm</h3>
+      <p>
+        Based in Dudu Anaj Mandi, we deal in quality grains, pulses, oilseeds
+        and bulk agricultural commodities with fair pricing and reliable service.
+      </p>
+      <a href="#products" class="btn">Explore Products</a>
+      <a href="#contact" class="btn">Contact Us</a>
+    </div>
   </header>
 
-  <section>
-    <h2 class="section-title">About Us</h2>
-    <p class="about">
-      RAWNKA TRADING COMPANY is a trusted family-owned trading firm dealing in
-      agricultural commodities. We focus on quality products, fair pricing,
-      reliable service and long-term customer relationships.
-    </p>
+  <section id="about">
+    <h2 class="title">About Us</h2>
+    <div class="about-box">
+      <p>
+        RAWNKA TRADING COMPANY is a family-owned agricultural commodity trading
+        firm based in Dudu Anaj Mandi, Rajasthan. We specialize in sourcing,
+        trading and supplying quality grains, pulses, oilseeds and other mandi
+        commodities. Our business is built on trust, transparent pricing,
+        dependable service and long-term relationships with farmers, traders and buyers.
+      </p>
+
+      <div class="stats">
+        <div class="stat">
+          <h2>100%</h2>
+          <p>Trusted Service</p>
+        </div>
+        <div class="stat">
+          <h2>15+</h2>
+          <p>Product Categories</p>
+        </div>
+        <div class="stat">
+          <h2>24/7</h2>
+          <p>Customer Support</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="products">
-    <h2 class="section-title">Our Products</h2>
-    <div class="cards">
+    <h2 class="title">Our Products</h2>
+    <div class="grid">
+      <div class="card"><h3>🌾 Wheat</h3><p>Quality wheat for wholesale and bulk trading.</p></div>
+      <div class="card"><h3>🌽 Maize</h3><p>Reliable maize trading for agricultural markets.</p></div>
+      <div class="card"><h3>🌾 Barley</h3><p>Bulk barley supply with fair mandi pricing.</p></div>
+      <div class="card"><h3>🌱 Mustard</h3><p>Trusted mustard seed trading and supply.</p></div>
+      <div class="card"><h3>🫘 Chana</h3><p>Gram and pulses for wholesale customers.</p></div>
+      <div class="card"><h3>🌿 Moong</h3><p>Green gram sourced with quality focus.</p></div>
+      <div class="card"><h3>🫘 Urad</h3><p>Black gram trading for mandi buyers.</p></div>
+      <div class="card"><h3>🌰 Soybean</h3><p>Oilseed and soybean commodity trading.</p></div>
+      <div class="card"><h3>🍚 Rice</h3><p>Rice supply for local and wholesale needs.</p></div>
+      <div class="card"><h3>🌾 Bajra</h3><p>Pearl millet trading and bulk availability.</p></div>
+      <div class="card"><h3>🌾 Jowar</h3><p>Sorghum and feed grain supply.</p></div>
+      <div class="card"><h3>🌻 Oil Seeds</h3><p>Different oilseed varieties for buyers.</p></div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <h2 class="title">Our Services</h2>
+    <div class="grid">
       <div class="card">
-        <h3>🌾 Wheat</h3>
-        <p>Quality wheat trading for wholesale and bulk supply.</p>
+        <h3>Wholesale Trading</h3>
+        <p>Bulk buying and selling of agricultural commodities.</p>
       </div>
       <div class="card">
-        <h3>🍚 Rice</h3>
-        <p>Reliable rice sourcing and trading for customers.</p>
+        <h3>Fair Mandi Pricing</h3>
+        <p>Transparent pricing based on quality and market rates.</p>
       </div>
       <div class="card">
-        <h3>🌽 Maize</h3>
-        <p>Fresh and quality maize for agricultural markets.</p>
+        <h3>Quality Check</h3>
+        <p>Careful attention to product quality and customer needs.</p>
       </div>
       <div class="card">
-        <h3>🫘 Pulses</h3>
-        <p>Different varieties of pulses with trusted service.</p>
+        <h3>Customer Support</h3>
+        <p>Quick contact through phone, WhatsApp and email.</p>
       </div>
     </div>
   </section>
 
   <section>
-    <h2 class="section-title">Why Choose Us?</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Fair Prices</h3>
-        <p>We believe in transparent and competitive pricing.</p>
-      </div>
-      <div class="card">
-        <h3>Trusted Service</h3>
-        <p>Customer trust and satisfaction are our top priorities.</p>
-      </div>
-      <div class="card">
-        <h3>Quality Products</h3>
-        <p>We deal with carefully selected agricultural commodities.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2 class="section-title">Gallery</h2>
+    <h2 class="title">Gallery</h2>
     <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=800&q=80">
-      <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80">
-      <img src="https://images.unsplash.com/photo-1530507629858-e4977d30e9e0?auto=format&fit=crop&w=800&q=80">
+      <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=900&q=80" alt="Wheat field">
+      <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=80" alt="Agriculture">
+      <img src="https://images.unsplash.com/photo-1530507629858-e4977d30e9e0?auto=format&fit=crop&w=900&q=80" alt="Grains">
+      <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="Farm">
     </div>
   </section>
 
   <section id="contact" class="contact">
-    <h2 class="section-title" style="color:white;">Contact Us</h2>
-    <p>📞 Phone: +91 XXXXX XXXXX</p>
-    <p>💬 WhatsApp: +91 XXXXX XXXXX</p>
-    <p>📍 Location: Your Town, Karnataka</p>
-    <p>✉️ Email: yourmail@example.com</p>
-    <br>
-    <a href="https://wa.me/91XXXXXXXXXX" class="btn">Message on WhatsApp</a>
+    <h2 class="title">Contact Us</h2>
+    <div class="contact-box">
+      <p>📍 Location: Dudu Anaj Mandi, Rajasthan</p>
+      <p>📞 Phone: <a href="tel:+917300151972" style="color:#f7c948;">+91 7300151972</a></p>
+      <p>💬 WhatsApp: <a href="https://wa.me/919829277737" style="color:#f7c948;">+91 7300151972</a></p>
+      <p>✉️ Email: <a href="mailto:kathan2007jain@gmail.com" style="color:#f7c948;">kathan2007jain@gmail.com</a></p>
+
+      <a class="btn" href="tel:+917300151972">Call Now</a>
+      <a class="btn" href="https://wa.me/919829277737">WhatsApp</a>
+
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps?q=Dudu%20Anaj%20Mandi%20Rajasthan&output=embed"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
   </section>
 
   <footer>
     <p>© 2026 RAWNKA TRADING COMPANY. All Rights Reserved.</p>
+    <p>Dudu Anaj Mandi, Rajasthan</p>
   </footer>
+
+  <a class="whatsapp" href="https://wa.me/917300151972">💬 WhatsApp</a>
 
 </body>
 </html>
